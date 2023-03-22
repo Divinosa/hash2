@@ -1,19 +1,16 @@
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 public class WordsChecker {
-
-    String text;
+    private Set<String> set = new HashSet<>();;
 
     public WordsChecker(String text){
-        this.text = text;
+        String[] words = text.split(" ");
+        set.addAll(Arrays.asList(words));
+
     }
     public boolean hasWord(String searchWord){
-        String[] words = text.split(" ");
-        Set<String> set = new HashSet<>();
-        for (String word : words){
-            set.add(word);
-        }
         boolean search = set.contains(searchWord);
         return search;
     }
